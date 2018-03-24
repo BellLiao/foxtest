@@ -4,16 +4,16 @@
   <meta charset="UTF-8">
   <meta name="author" content="skyduck">
   <meta name="copyright" content="skyduck">
-  <meta name="description" content="狐狸怎麼教 | 狐狸考試題庫，本題庫僅供學習參考">
-  <meta name="subject" content="Fox Test | 狐狸怎麼教">
-  <meta itemprop="name" content="Fox Test | 狐狸怎麼教">
+  <meta name="description" content="狐狸怎么教 | 狐狸考试题库，本题库仅供学习参考">
+  <meta name="subject" content="Fox Test | 狐狸怎么教">
+  <meta itemprop="name" content="Fox Test | 狐狸怎么教">
   <meta itemprop="image" content="https://skyduck0205.github.io/foxtest/fox.png">
-  <meta itemprop="description" content="狐狸怎麼教 | 狐狸考試題庫，本題庫僅供學習參考">
-  <meta property="og:title" content="Fox Test | 狐狸怎麼教" >
+  <meta itemprop="description" content="狐狸怎么教 | 狐狸考试题库，本题库仅供学习参考">
+  <meta property="og:title" content="Fox Test | 狐狸怎么教" >
   <meta property="og:url" content="https://skyduck0205.github.io/foxtest/">
   <meta property="og:image" content="https://skyduck0205.github.io/foxtest/fox.png">
-  <meta property="og:description" content="狐狸怎麼教 | 狐狸考試題庫，本題庫僅供學習參考">
-  <meta property="og:site_name" content="Fox Test | 狐狸怎麼教">
+  <meta property="og:description" content="狐狸怎么教 | 狐狸考试题库，本题库仅供学习参考">
+  <meta property="og:site_name" content="Fox Test | 狐狸怎么教">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="author" href="https://github.com/skyduck0205">
 
@@ -68,10 +68,10 @@
   <img class="logo" src="fox.png">
   <nav>
     <div class="input-wrapper">
-      <input type="text" ng-model="search" placeholder="關鍵字" />
+      <input type="text" ng-model="search" placeholder="关键字" />
       <small ng-if="search.length" ng-click="onClearClick()">╳</small>
     </div>
-    <span>考試項目：</span>
+    <span>考试项目：</span>
     <div class="select-wrapper">
       <select ng-options="item.id as item.label for item in selector" ng-model="set"></select>
     </div>
@@ -88,13 +88,13 @@
     <div class="share">
       <small>分享到</small>
       <div class="share-button share-button-line"><div class="line-it-button" data-lang="zh_Hant" data-type="share-b" data-url="https://skyduck0205.github.io/foxtest/" style="display: none;"></div></div>
-      <div class="share-button share-button-skype"><div class='skype-share' data-href='https://skyduck0205.github.io/foxtest/' data-lang='zh-TW' data-text='狐狸怎麼教' data-style='square' ></div></div>
+      <div class="share-button share-button-skype"><div class='skype-share' data-href='https://skyduck0205.github.io/foxtest/' data-lang='zh-TW' data-text='狐狸怎么教' data-style='square' ></div></div>
     </div>
     <div class="donate">
       <small>作者: <a href="#contact">skyduck</a></small>
       <small>|</small>
-      <small>贊助不會讓網站更好</small>
-      <small class="warn">開通了→</small>
+      <small>赞助不会让网站更好</small>
+      <small class="warn">开通了→</small>
       <a href="https://p.opay.tw/x8CAF" target="_blank"><img src="https://payment.opay.tw/Content/themes/WebStyle201404/images/allpay.png" /></a>
     </div>
   </footer>
@@ -116,8 +116,8 @@
       .controller('TestController', function($scope, $window) {
         $scope.contact = $window.location.search === '?contact' || $window.location.hash === '#contact';
         $scope.selector = [
-          { id: 'test1', label: '工業大樹鋸' },
-          { id: 'test0', label: '小吃店老闆' }
+          { id: 'test1', label: '工业大树锯' },
+          { id: 'test0', label: '小吃店老板' }
         ];
         $scope.set = 'test1';
         $scope.questions = {};
