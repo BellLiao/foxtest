@@ -26,11 +26,11 @@
 
   <title>Fox Test</title>
   <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-PTM3NGR');</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W6SR73S');</script>
   <!-- End Google Tag Manager -->
 
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
@@ -39,6 +39,7 @@
   <script src="loader.min.js" async="async" defer="defer"></script>
   <script src="test0.js"></script>
   <script src="test1.js"></script>
+  <script src="test2.js"></script>
   <link rel="stylesheet" type="text/css" href="style.css">
 
   <!-- Skype Sharing -->
@@ -63,9 +64,9 @@
 </head>
 <body ng-controller="TestController">
   <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PTM3NGR"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W6SR73S"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
   <img class="logo" src="fox.png">
   <nav>
@@ -115,15 +116,26 @@
     angular.module('Test', []);
     angular
       .module('Test')
-      .controller('TestController', function($scope, $window) {
+      .controller('TestController', function($scope, $window, $interval) {
         $scope.contact = $window.location.search === '?contact' || $window.location.hash === '#contact';
         $scope.selector = [
+          { id: 'test2', label: '工业互怜网' },
           { id: 'test1', label: '工业大树锯' },
           { id: 'test0', label: '小吃店老板' }
         ];
-        $scope.set = 'test1';
+        $scope.set = 'test2';
         $scope.questions = {};
         $scope.search = '';
+        $scope.trashTalks = [
+          '赞助: 赞助不会让网站更好',
+          '赞助: 没念书拿高分良心不安，买张赎罪券吧',
+          '赞助: 谢谢你的葵瓜子，我的仓鼠会很开心',
+          '赞助: 请我吃午餐',
+          '赞助: 如果你100分，安慰没有满分的我',
+          '赞助: 地方的工程师需要你的赞助',
+          '赞助: 听海哭的声音这片海未免也太多情北七到天明'
+        ];
+        $scope.talkIndex = 0;
         $scope.onClearClick = function() {
           $scope.search = '';
         };
@@ -136,6 +148,8 @@
           $scope.contact = $window.location.hash === '#contact';
           $scope.$apply();
         }
+
+        $interval(function() { $scope.talkIndex = ($scope.talkIndex + 1) % $scope.trashTalks.length; }, 10000);
       })
       .filter('highlight', function($sce) {
         return function(text, phrase) {
